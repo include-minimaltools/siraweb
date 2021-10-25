@@ -35,7 +35,6 @@ export default function CampusList() {
     fetch('http://localhost:19876/Campus/InsertOrUpdate', requestOptions)
       .then(response => {
         message.config({top: 60})
-        console.log(response)
         if(response.status === 200)
         {
           message.success(`Se ha ${(isEdit ? 'editado' : 'agregado')} el campus`)
@@ -52,12 +51,14 @@ export default function CampusList() {
 
   const getCampusList = () => {
     fetch('http://localhost:19876/Campus/Get')
-    .then(response => response.json()).then(data => setCampusList(data.Data))
+    .then(response => response.json()).then(data => {
+      console.log(data)
+      setCampusList(data.Data)
+    })
   }
 
   const getCampus = (id) => {
     const campus = campusList.filter(campus => campus.ID === id).pop()
-    console.log(campus)
     setCampusItem({
       ID: campus.ID,
       DESCRIPTION: campus.DESCRIPTION,

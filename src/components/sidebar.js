@@ -10,8 +10,8 @@ export default function SideBar() {
         <NavItem text="Asignaturas" to="/Course"/>
         <NavItem text="Estudiantes" to="/Students"/>
         <NavItem text="Facultades" to="/Faculty"/>
-        <NavItem text="Roles" to="/Role"/>
-        <NavItem text="Usuarios" to="/User"/>
+        {/* <NavItem text="Roles" to="/Role"/>
+        <NavItem text="Usuarios" to="/User"/> */}
       </ul>
     </nav>
 

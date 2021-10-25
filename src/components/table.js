@@ -21,7 +21,7 @@ export default function Table({ title, description, columns, dataSource, actionT
                 <tbody>
                   {dataSource.map((element, index) => <tr key={index}>
                     {Object.entries(element).map(([key, value]) => columns.map(column => column.dataSource === key ? <td key={key}>{value}</td> : null))}
-                    { actions && actions.map((action, index) => <td key={index}><button id={element.ID} {...action.props}>{action.name}</button></td>) }
+                    { actions && actions.map((action, index) => <td key={index}><button id={element.ID || element.CARNET} {...action.props}>{action.name}</button></td>) }
                     </tr>
                   )}
                 </tbody>

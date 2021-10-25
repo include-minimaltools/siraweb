@@ -1,6 +1,6 @@
 // React lib
 import React from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 // Styles
 import './css/vertical-layout-light/style.css'
@@ -20,21 +20,20 @@ import StudentList from './views/student/studentlist';
 import FacultyList from './views/faculty/facultylist';
 import RoleList from './views/role/rolelist';
 import UserList from './views/user/userlist';
-import Error404 from './views/errors/404';
+// import Error404 from './views/errors/404';
 
 export default function App() {
   return (
     <Router>
-      <Route path="/Error" ><Error404 /></Route>
-        <Route exact path="/"><CampusList /></Route>
-        <Route path="/Campus" ><CampusList /></Route>
-        <Route path="/Career" ><CareerList /></Route>
-        <Route path="/Course" ><CourseList /></Route>
-        <Route path="/Students" ><StudentList /></Route>
-        <Route path="/Faculty" ><FacultyList /></Route>
-        <Route path="/Role" ><RoleList /></Route>
-        <Route path="/User" ><UserList /></Route>
-      <Redirect to="/Error" />
+      {/* <Route path="/" ><Error404 /></Route> */}
+      <Route exact path="/Campus" ><CampusList /></Route>
+      <Route exact path="/" ><CampusList /></Route>
+      <Route exact path="/Career" ><CareerList /></Route>
+      <Route exact path="/Course" ><CourseList /></Route>
+      <Route exact path="/Students" ><StudentList /></Route>
+      <Route exact path="/Faculty" ><FacultyList /></Route>
+      <Route exact path="/Role" ><RoleList /></Route>
+      <Route exact path="/User" ><UserList /></Route>
     </Router >
   );
 }
